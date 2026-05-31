@@ -482,6 +482,13 @@ p {
     margin-top: 1rem;
 }
 
+.footer-ai {
+    color: #25d366;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
 /* ===== Responsividade ===== */
 @media (max-width: 768px) {
     h2 {
