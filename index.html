@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MMJ SOUSA - Instalações elétricas, comandos elétricos, automação, CFTV, manutenção predial, energia solar e serviços elétricos residenciais e comerciais em São Paulo.">
+    <meta name="keywords" content="eletricista em São Paulo, comandos elétricos, automação industrial, automação residencial, manutenção elétrica, CFTV, energia solar, eletricista zona sul, MMJ SOUSA">
+    <meta name="author" content="MMJ SOUSA">
+    <meta name="theme-color" content="#ff6b35">
+    <title>MMJ SOUSA - Eletricista Profissional em São Paulo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b35'>⚡</text></svg>">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>MMJ SOUSA</h1>
+                <p class="tagline">Técnico em Eletrotécnica</p>
+            </div>
+            <nav class="nav">
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#localizacao" class="nav-link">Localização</a>
+                <a href="#contato" class="nav-link btn-primary">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Eficiência, Rapidez e Qualidade</h2>
+            <p>Instalações Elétricas, Comandos Elétricos, Automação e Manutenção Predial</p>
+            <div class="hero-buttons">
+                <a href="#localizacao" class="btn btn-primary">Ver Localização</a>
+                <button onclick="obterLocalizacao()" class="btn btn-secondary">Encontrar Eletricista Próximo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Sobre Nós</h2>
+            <p>Somos especializados em soluções elétricas completas para residências, comércios e indústrias. Com anos de experiência, garantimos qualidade e segurança em todos os projetos.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <div class="card-icon">🔌</div>
+                    <h3>Comandos Elétricos</h3>
+                    <p>Montagem de painéis, contatores, relés, temporizadores e sistemas de comando.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤖</div>
+                    <h3>Automação</h3>
+                    <p>Automação residencial, comercial e industrial, controle inteligente de equipamentos e sistemas.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📹</div>
+                    <h3>CFTV e Segurança</h3>
+                    <p>Instalação e manutenção de câmeras, DVR, monitoramento e sistemas de segurança.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">☀️</div>
+                    <h3>Energia Solar</h3>
+                    <p>Instalação, manutenção e suporte para sistemas fotovoltaicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="localizacao" class="location">
+        <div class="container">
+            <h2>Nossa Localização</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Rua Jaracatiá, 859</h3>
+                    <p>São Paulo - SP</p>
+                    <a href="https://maps.google.com/?q=Rua+Jaracatiá+859+São+Paulo" target="_blank" rel="noopener" class="btn btn-primary">Ver no Google Maps</a>
+                </div>
+                <iframe class="map" src="https://www.google.com/maps?q=Rua+Jaracatiá+859+São+Paulo&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-content">
+                <p id="status" class="status-message"></p>
+                <button onclick="obterLocalizacao()" class="btn btn-primary">Encontrar Eletricista Próximo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 MMJ SOUSA. Todos os direitos reservados.</p>
+            <p>Rua Jaracatiá, 859 - São Paulo, SP</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
