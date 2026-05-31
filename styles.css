@@ -9,12 +9,14 @@
     --primary-color: #ff6b35;
     --secondary-color: #004e89;
     --accent-color: #1a535c;
+    --whatsapp-color: #25d366;
     --light-bg: #f4f4f4;
     --dark-text: #333;
     --light-text: #666;
     --border-color: #ddd;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
 }
 
 /* ===== Tipografia Base ===== */
@@ -23,6 +25,7 @@ body {
     line-height: 1.6;
     color: var(--dark-text);
     background-color: #fff;
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,6 +38,11 @@ h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+h3 {
+    color: var(--secondary-color);
 }
 
 p {
@@ -47,6 +55,53 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* ===== WhatsApp Floating Button ===== */
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--whatsapp-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-button:active {
+    transform: scale(0.95);
+}
+
+.whatsapp-button svg {
+    width: 32px;
+    height: 32px;
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .whatsapp-button svg {
+        width: 28px;
+        height: 28px;
+    }
 }
 
 /* ===== Header/Navigation ===== */
@@ -88,13 +143,24 @@ p {
 .nav-link {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: var(--transition);
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    font-weight: 500;
 }
 
 .nav-link:hover {
     color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-link.btn-primary:hover {
+    background-color: #e55a24;
 }
 
 /* ===== Hero Section ===== */
@@ -103,18 +169,40 @@ p {
     color: white;
     padding: 5rem 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBackground 20s linear infinite;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: white;
+    animation: slideDown 0.8s ease-out;
 }
 
 .hero p {
     font-size: 1.3rem;
     color: #e0e0e0;
     margin-bottom: 2rem;
+    animation: slideUp 0.8s ease-out 0.2s both;
 }
 
 .hero-buttons {
@@ -122,6 +210,34 @@ p {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ===== Buttons ===== */
@@ -131,7 +247,7 @@ p {
     border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     border: none;
     cursor: pointer;
     font-size: 1rem;
@@ -148,6 +264,10 @@ p {
     box-shadow: var(--shadow-lg);
 }
 
+.btn-primary:active {
+    transform: translateY(0);
+}
+
 .btn-secondary {
     background-color: transparent;
     color: white;
@@ -157,6 +277,11 @@ p {
 .btn-secondary:hover {
     background-color: white;
     color: var(--secondary-color);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
 }
 
 /* ===== About Section ===== */
@@ -169,7 +294,38 @@ p {
 .about p {
     font-size: 1.1rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.highlight {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.highlight:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.highlight h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.highlight p {
+    color: var(--light-text);
+    margin: 0;
 }
 
 /* ===== Services Section ===== */
@@ -190,7 +346,7 @@ p {
     padding: 2rem;
     text-align: center;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: var(--transition);
     border-top: 4px solid var(--primary-color);
 }
 
@@ -202,6 +358,12 @@ p {
 .card-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .card h3 {
@@ -242,6 +404,24 @@ p {
     margin-bottom: 1.5rem;
 }
 
+.location-details {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.location-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.location-buttons .btn {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+
 .map {
     width: 100%;
     height: 350px;
@@ -254,6 +434,7 @@ p {
 .contact {
     padding: 3rem 20px;
     text-align: center;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(0, 78, 137, 0.1) 100%);
 }
 
 .contact-content {
@@ -261,18 +442,25 @@ p {
     margin: 0 auto;
 }
 
-.status-message {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border-radius: 4px;
-    display: none;
+.contact-intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--dark-text);
 }
 
-.status-message.show {
-    display: block;
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeaa7;
+.contact-info {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.phone-number {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 0;
 }
 
 /* ===== Footer ===== */
@@ -286,6 +474,12 @@ p {
 .footer p {
     color: #ccc;
     margin-bottom: 0.5rem;
+}
+
+.footer-contact {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 /* ===== Responsividade ===== */
@@ -337,6 +531,14 @@ p {
     .services-grid {
         grid-template-columns: 1fr;
     }
+
+    .location-buttons {
+        flex-direction: column;
+    }
+
+    .location-buttons .btn {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -366,11 +568,61 @@ p {
         font-size: 0.9rem;
     }
 
+    .btn-large {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
     .logo h1 {
         font-size: 1.3rem;
     }
 
     .logo .tagline {
         font-size: 0.8rem;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .location-info {
+        padding: 1rem;
+    }
+
+    .contact-info {
+        padding: 1.5rem;
+    }
+
+    .phone-number {
+        font-size: 1.3rem;
+    }
+}
+
+/* ===== Acessibilidade ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== Focus Visible para Acessibilidade ===== */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .whatsapp-button,
+    .header,
+    .footer {
+        display: none;
+    }
+
+    body {
+        background-color: white;
     }
 }

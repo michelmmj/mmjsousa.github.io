@@ -3,111 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MMJ SOUSA - Instalações elétricas, comandos elétricos, automação, CFTV, manutenção predial, energia solar e serviços elétricos residenciais e comerciais em São Paulo.">
+    <meta name="description" content="MMJ SOUSA - Eletricista profissional em São Paulo. Instalações elétricas, comandos elétricos, automação, CFTV, manutenção predial, energia solar e serviços elétricos residenciais e comerciais.">
     <meta name="keywords" content="eletricista em São Paulo, comandos elétricos, automação industrial, automação residencial, manutenção elétrica, CFTV, energia solar, eletricista zona sul, MMJ SOUSA">
     <meta name="author" content="MMJ SOUSA">
     <meta name="theme-color" content="#ff6b35">
+    <meta property="og:title" content="MMJ SOUSA - Eletricista Profissional em São Paulo">
+    <meta property="og:description" content="Serviços elétricos de qualidade: instalações, comandos, automação, CFTV e energia solar.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://mmjsousa.github.io">
+    <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect fill='%23ff6b35' width='200' height='200'/><text x='50%' y='50%' font-size='120' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>⚡</text></svg>">
     <title>MMJ SOUSA - Eletricista Profissional em São Paulo</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23ff6b35'>⚡</text></svg>">
 </head>
 <body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511971327376?text=Olá%20MMJ%20SOUSA!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20serviços%20elétricos." 
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contate-nos pelo WhatsApp"
+       title="Enviar mensagem via WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949l-.305.149-3.159-.83.845 3.645-.236.365a9.964 9.964 0 1513.6-5.175c-.001 0 .003 0 .003 0z"/>
+        </svg>
+    </a>
+
     <!-- Header/Navigation -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="logo">
                 <h1>MMJ SOUSA</h1>
                 <p class="tagline">Técnico em Eletrotécnica</p>
             </div>
-            <nav class="nav">
+            <nav class="nav" role="navigation" aria-label="Navegação principal">
                 <a href="#sobre" class="nav-link">Sobre</a>
                 <a href="#servicos" class="nav-link">Serviços</a>
                 <a href="#localizacao" class="nav-link">Localização</a>
-                <a href="#contato" class="nav-link btn-primary">Contato</a>
+                <a href="https://wa.me/5511971327376?text=Olá%20MMJ%20SOUSA!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20serviços%20elétricos." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="nav-link btn-primary"
+                   aria-label="Contate-nos pelo WhatsApp">
+                    Contato
+                </a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-label="Seção principal">
         <div class="container">
             <h2>Eficiência, Rapidez e Qualidade</h2>
             <p>Instalações Elétricas, Comandos Elétricos, Automação e Manutenção Predial</p>
             <div class="hero-buttons">
                 <a href="#localizacao" class="btn btn-primary">Ver Localização</a>
-                <button onclick="obterLocalizacao()" class="btn btn-secondary">Encontrar Eletricista Próximo</button>
+                <a href="https://wa.me/5511971327376?text=Olá%20MMJ%20SOUSA!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20serviços%20elétricos." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="btn btn-secondary"
+                   aria-label="Enviar mensagem via WhatsApp">
+                    Contate pelo WhatsApp
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="about">
+    <section id="sobre" class="about" aria-labelledby="about-title">
         <div class="container">
-            <h2>Sobre Nós</h2>
-            <p>Somos especializados em soluções elétricas completas para residências, comércios e indústrias. Com anos de experiência, garantimos qualidade e segurança em todos os projetos.</p>
+            <h2 id="about-title">Sobre Nós</h2>
+            <p>Somos especializados em soluções elétricas completas para residências, comércios e indústrias. Com anos de experiência, garantimos qualidade e segurança em todos os projetos. Nossa equipe é formada por profissionais qualificados e comprometidos com a excelência no atendimento.</p>
+            <div class="about-highlights">
+                <div class="highlight">
+                    <h3>✓ Profissionalismo</h3>
+                    <p>Técnico em Eletrotécnica com experiência comprovada</p>
+                </div>
+                <div class="highlight">
+                    <h3>✓ Segurança</h3>
+                    <p>Conformidade com normas técnicas e de segurança</p>
+                </div>
+                <div class="highlight">
+                    <h3>✓ Agilidade</h3>
+                    <p>Atendimento rápido e eficiente em toda São Paulo</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="servicos" class="services">
+    <section id="servicos" class="services" aria-labelledby="services-title">
         <div class="container">
-            <h2>Nossos Serviços</h2>
+            <h2 id="services-title">Nossos Serviços</h2>
             <div class="services-grid">
                 <div class="card">
-                    <div class="card-icon">🔌</div>
+                    <div class="card-icon" aria-hidden="true">🔌</div>
                     <h3>Comandos Elétricos</h3>
-                    <p>Montagem de painéis, contatores, relés, temporizadores e sistemas de comando.</p>
+                    <p>Montagem de painéis, contatores, relés, temporizadores e sistemas de comando para aplicações residenciais, comerciais e industriais.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">🤖</div>
+                    <div class="card-icon" aria-hidden="true">🤖</div>
                     <h3>Automação</h3>
-                    <p>Automação residencial, comercial e industrial, controle inteligente de equipamentos e sistemas.</p>
+                    <p>Automação residencial, comercial e industrial. Controle inteligente de equipamentos e sistemas para maior conforto e eficiência.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">📹</div>
+                    <div class="card-icon" aria-hidden="true">📹</div>
                     <h3>CFTV e Segurança</h3>
-                    <p>Instalação e manutenção de câmeras, DVR, monitoramento e sistemas de segurança.</p>
+                    <p>Instalação e manutenção de câmeras, DVR, monitoramento e sistemas de segurança de última geração.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">☀️</div>
+                    <div class="card-icon" aria-hidden="true">☀️</div>
                     <h3>Energia Solar</h3>
-                    <p>Instalação, manutenção e suporte para sistemas fotovoltaicos.</p>
+                    <p>Instalação, manutenção e suporte completo para sistemas fotovoltaicos residenciais e comerciais.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Location Section -->
-    <section id="localizacao" class="location">
+    <section id="localizacao" class="location" aria-labelledby="location-title">
         <div class="container">
-            <h2>Nossa Localização</h2>
+            <h2 id="location-title">Nossa Localização</h2>
             <div class="location-content">
                 <div class="location-info">
                     <h3>Rua Jaracatiá, 859</h3>
                     <p>São Paulo - SP</p>
-                    <a href="https://maps.google.com/?q=Rua+Jaracatiá+859+São+Paulo" target="_blank" rel="noopener" class="btn btn-primary">Ver no Google Maps</a>
+                    <p class="location-details">Zona Sul de São Paulo</p>
+                    <div class="location-buttons">
+                        <a href="https://maps.google.com/?q=Rua+Jaracatiá+859+São+Paulo" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="btn btn-primary">
+                            Ver no Google Maps
+                        </a>
+                        <a href="https://wa.me/5511971327376?text=Olá%20MMJ%20SOUSA!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20serviços%20elétricos." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="btn btn-secondary">
+                            Enviar WhatsApp
+                        </a>
+                    </div>
                 </div>
-                <iframe class="map" src="https://www.google.com/maps?q=Rua+Jaracatiá+859+São+Paulo&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="map" 
+                        src="https://www.google.com/maps?q=Rua+Jaracatiá+859+São+Paulo&output=embed" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização da MMJ SOUSA no Google Maps"
+                        aria-label="Mapa mostrando a localização da MMJ SOUSA">
+                </iframe>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contato" class="contact">
+    <section id="contato" class="contact" aria-labelledby="contact-title">
         <div class="container">
-            <h2>Entre em Contato</h2>
+            <h2 id="contact-title">Entre em Contato</h2>
             <div class="contact-content">
-                <p id="status" class="status-message"></p>
-                <button onclick="obterLocalizacao()" class="btn btn-primary">Encontrar Eletricista Próximo</button>
+                <p class="contact-intro">Solicite um orçamento ou tire suas dúvidas entrando em contato conosco pelo WhatsApp:</p>
+                <div class="contact-info">
+                    <p class="phone-number">📱 (11) 97132-7376</p>
+                </div>
+                <a href="https://wa.me/5511971327376?text=Olá%20MMJ%20SOUSA!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20serviços%20elétricos." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="btn btn-primary btn-large">
+                    Enviar Mensagem via WhatsApp
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2026 MMJ SOUSA. Todos os direitos reservados.</p>
             <p>Rua Jaracatiá, 859 - São Paulo, SP</p>
+            <p class="footer-contact">📱 (11) 97132-7376</p>
         </div>
     </footer>
 
