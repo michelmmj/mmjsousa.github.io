@@ -541,6 +541,13 @@ p {
     color: var(--secondary-color);
     font-weight: 600;
     margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.contact-description {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin: 0;
 }
 
 /* ===== Footer ===== */

@@ -21,40 +21,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /**
- * Função para obter localização do usuário e gerar rota para o estabelecimento
- */
-function obterLocalizacao() {
-    const endereco = 'Rua+Jaracatiá+859+São+Paulo';
-
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            function(position) {
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-                const mapsUrl = `https://www.google.com/maps/dir/${lat},${lon}/${endereco}`;
-                
-                // Abrir Google Maps com rota
-                window.open(mapsUrl, '_blank');
-            },
-            function(error) {
-                console.error('Erro de geolocalização:', error);
-                
-                // Abrir Google Maps mesmo sem localização do usuário
-                window.open(`https://www.google.com/maps/search/${endereco}`, '_blank');
-            },
-            {
-                enableHighAccuracy: false,
-                timeout: 5000,
-                maximumAge: 0
-            }
-        );
-    } else {
-        // Navegador não suporta geolocalização
-        window.open(`https://www.google.com/maps/search/${endereco}`, '_blank');
-    }
-}
-
-/**
  * Lazy loading para imagens (se houver)
  */
 if ('IntersectionObserver' in window) {
