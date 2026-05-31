@@ -8,7 +8,7 @@ Website profissional para MMJ SOUSA, empresa de serviços elétricos em São Pau
 - ✅ Otimizado para SEO
 - ✅ Acessibilidade melhorada
 - ✅ Integração com Google Maps
-- ✅ Geolocalização para encontrar eletricista próximo
+- ✅ whatsapp 11971327376
 - ✅ Interface moderna e profissional
 - ✅ Sem dependências externas
 
